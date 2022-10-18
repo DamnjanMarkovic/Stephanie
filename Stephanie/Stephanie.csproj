@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{25BFF4F1-901A-487F-B34C-4D903F61B026}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Stephanie</RootNamespace>
+    <AssemblyName>Stephanie</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NUnit|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\NUnit\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Imdsoft.DriverInfra">
+      <HintPath>..\packages\Version 1.2.0.0\Imdsoft.DriverInfra.dll</HintPath>
+    </Reference>
+    <Reference Include="Imdsoft.SettingsSupport">
+      <HintPath>..\packages\Version 1.2.0.0\Imdsoft.SettingsSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="Imdsoft.SettingsSupport.DriverSetup">
+      <HintPath>..\packages\Version 1.2.0.0\Imdsoft.SettingsSupport.DriverSetup.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.MVBSLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9d8162944bd6fdc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>.\Interop.MVBSLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommunicationPacket\CommunicationPacket.cs" />
+    <Compile Include="ConfigSettings.cs" />
+    <Compile Include="Driver.cs" />
+    <Compile Include="Exceptions\AlarmParameterExceptions.cs" />
+    <Compile Include="Exceptions\DriverExceptions.cs" />
+    <Compile Include="Exceptions\ParameterExceptions.cs" />
+    <Compile Include="Exceptions\RequestCommandsExceptions.cs" />
+    <Compile Include="Exceptions\ResponsePacketExceptions.cs" />
+    <Compile Include="Helpers\XmlHelper.cs" />
+    <Compile Include="Installer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PoolSettings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RequestPacket\AlarmRequestPacket.cs" />
+    <Compile Include="RequestPacket\DataRequestPacket.cs" />
+    <Compile Include="RequestPacket\DeviceSettingsRequestPacket.cs" />
+    <Compile Include="RequestPacket\RequestCommands.cs" />
+    <Compile Include="RequestPacket\RequestPacket.cs" />
+    <Compile Include="RequestPacket\SettingsRequestPacket.cs" />
+    <Compile Include="ResponsePacket\AlarmResponsePacket.cs" />
+    <Compile Include="ResponsePacket\DataResponsePacket.cs" />
+    <Compile Include="ResponsePacket\DeviceSettingResponsePacket.cs" />
+    <Compile Include="ResponsePacket\Parameters\AlarmParameter.cs" />
+    <Compile Include="ResponsePacket\Parameters\DataParameter.cs" />
+    <Compile Include="ResponsePacket\Parameters\DeviceSettingsParameter.cs" />
+    <Compile Include="ResponsePacket\Parameters\Parameter.cs" />
+    <Compile Include="ResponsePacket\ResponsePacket.cs" />
+    <Compile Include="ResponsePacket\Parameters\ParameterInfo.cs" />
+    <Compile Include="ResponsePacket\Parameters\SettingsParameter.cs" />
+    <Compile Include="ResponsePacket\SettingResponsePacket.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Document\Samples from the machine\StephanieDumpAlarm.dat" />
+    <None Include="Document\Samples from the machine\StephanieDumpData.dat" />
+    <None Include="Document\Samples from the machine\StephanieDumpSettings.dat" />
+    <None Include="Document\SelfMade Samples %28for testing%29\Packet.bin" />
+    <None Include="Document\Stephanie - 18Dec2007 ReleaseNotes.doc" />
+    <None Include="Document\StephanPDMSProtocolENV1.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DeviceInfo.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,105 @@
+﻿<DeviceInfo>
+	<RequestCommands>
+		<Request1 RequestPacketType="Stephanie.RequestPacket.DataRequestPacket" RequestCommandText="GET1" />
+		<Request2 RequestPacketType="Stephanie.RequestPacket.AlarmRequestPacket" RequestCommandText="GET2" />
+		<Request3 RequestPacketType="Stephanie.RequestPacket.SettingsRequestPacket" RequestCommandText="GET3" />
+		<Request4 RequestPacketType="Stephanie.RequestPacket.DeviceSettingsRequestPacket" RequestCommandText="GET4" />
+	</RequestCommands>
+	<Paramaters>
+		<Data ID="1" Name="Pmax" Description="maximum of endinspiratory pressure in 1 cmH2O" Divider="10" />
+		<Data ID="2" Name="Posc" Description="peak-peak oscillation amplitude in 1 cmH2O" Divider="10" />
+		<Data ID="3" Name="Pmean" Description="mean airway pressure in 1 cmH2O" Divider="10" />
+		<Data ID="4" Name="PEEP" Description="positive endexpiratory pressure in 1 cmH2O" Divider="10" />
+		<Data ID="5" Name="Flow" Description="minute volume in 1 mL/min" Divider="10" />
+		<Data ID="6" Name="VT" Description="expiratory tidal volume in 1 mL" Divider="10" />
+		<Data ID="7" Name="Freq" Description="ventilation frequency in 1 bpm" Divider="10" />
+		<Data ID="8" Name="Insp" Description="portion of inspiratory, I:E ratio in 1%" Divider="10"/>
+		<Data ID="9" Name="FiO2" Description="inspiratory oxygen concentration in 1%" Divider="10" />
+		<Data ID="10" Name="Temp" Description="temperature near Y-piece in 1C" Divider="10" />
+		<Data ID="11" Name="R" Description="Resistance in 1 cmH2O/L/s" Divider="10" />
+		<Data ID="12" Name="C" Description="compliance in 1 mL/cmH2O" Divider="10"/>
+		<Alarm ID="13" Name="Alarm1" />
+		<Alarm ID="14" Name="Alarm2" />
+		<Alarm ID="15" Name="Alarm3" />
+		<Alarm ID="16" Name="Alarm4" />
+		<Settings ID="18" Name="SET_Temp." Description="temperatur nominal value 1C" Divider="10" />
+		<Settings ID="19" Name="SET_Resist." Description="resistance nominal value in 1 cmH2O/mL/s" Divider="10" />
+		<Settings ID="20" Name="SET_Elast." Description="elastance nominal value in 1 cmH2O/mL" Divider="10" />
+		<Settings ID="21" Name="SET_HFOFreq." Description="nominal HFO frequency in 1 Hz" Divider="10" />
+		<Settings ID="22" Name="SET_PEEP" Description="nominal positive endexpiratory pressure in 1 cmH2O" Divider="10" />
+		<Settings ID="23" Name="SET_Pmax" Description="maximum pressure 1 cmH2O" Divider="10" />
+		<Settings ID="24" Name="SET_Mode" Description="breath pattern" />
+		<Settings ID="25" Name="SET_Vt" Description="nominal tidal volume in 1 mL" Divider="10"/>
+		<Settings ID="26" Name="SET_Tinsp" Description="inspiration time in 1 sec" Divider="10"/>
+		<Settings ID="27" Name="SET_Trigger" Description="trigger threshold in 1 mL/min" Divider="10"/>
+		<Settings ID="28" Name="SET_FiO2" Description="oxygen concentration in 1%" Divider="10" />
+		<Settings ID="29" Name="SET_Posz" Description="oszillation amplitude in 1 cmH2O" Divider="10" />
+		<Settings ID="64" Name="SET_Texp" Description="expiration time in 1 sec" Divider="100" />
+		<Settings ID="67" Name="SET_ModeSwitch" Description="Ventilation mode" />
+		<DeviceSettings ID="32" Name="Trigger Source" Description="Trigger" />
+		<DeviceSettings ID="33" Name="Respiratory Supplement" Description="Respiratory Supplement" />
+		<DeviceSettings ID="34" Name="Closed Loop Ventilation" Description="Status (DATA_1)"/>
+		<DeviceSettings ID="35" Name="Rebreathing Mode" Description="Open / Closed"/>
+	</Paramaters>
+	<Alarms>
+		<Alarm AlarmNo="0" Text="Controller Fail" />
+		<Alarm AlarmNo="1" Text="PC Failure" />
+		<Alarm AlarmNo="2" Text="Hardware Failure" />
+		<Alarm AlarmNo="3" Text="Power Supply Fail" />
+		<Alarm AlarmNo="4" Text="Battery Failure" />
+		<Alarm AlarmNo="5" Text="ADC Failure" />
+		<Alarm AlarmNo="6" Text="Valve Failure" />
+		<Alarm AlarmNo="7" Text="POT./Pmax,PEEP,Ti" />
+		<Alarm AlarmNo="8" Text="Communication" />
+		<Alarm AlarmNo="9" Text="Control Panel" />
+		<Alarm AlarmNo="10" Text="Low Gas Pressure" />
+		<Alarm AlarmNo="11" Text="Low Inlet Gases" />
+		<Alarm AlarmNo="12" Text="Supply Voltage" />
+		<Alarm AlarmNo="13" Text="PatientValve" />
+		<Alarm AlarmNo="14" Text="Press.Sensor Fail" />
+		<Alarm AlarmNo="15" Text="PROL. High PRESS." />
+		<Alarm AlarmNo="16" Text="VT(Insp) Low" />
+		<Alarm AlarmNo="17" Text="Apnea" />
+		<Alarm AlarmNo="18" Text="Negative Pressure" />
+		<Alarm AlarmNo="19" Text="PEAK PRESS. > 0.3s" />
+		<Alarm AlarmNo="20" Text="Low MIN. Volume" />
+		<Alarm AlarmNo="21" Text="Low Pressure/DISC" />
+		<Alarm AlarmNo="22" Text="Pressure Sensors" />
+		<Alarm AlarmNo="23" Text="Temperature > 41C" />
+		<Alarm AlarmNo="24" Text="Safety Valve" />
+		<Alarm AlarmNo="25" Text="O2 Sensor" />
+		<Alarm AlarmNo="26" Text="Air Pressure" />
+		<Alarm AlarmNo="27" Text="O2 Valve" />
+		<Alarm AlarmNo="28" Text="SUBSTIT. Valve" />
+		<Alarm AlarmNo="29" Text="Low Air Pressure" />
+		<Alarm AlarmNo="30" Text="Low O2 Pressure" />
+		<Alarm AlarmNo="31" Text="PNEUMOTACHOGRAPH" />
+		<Alarm AlarmNo="32" Text="Flow Sensor Valve" />
+		<Alarm AlarmNo="33" Text="Patient Part ?" />
+		<Alarm AlarmNo="34" Text="PEAK Pressure" />
+		<Alarm AlarmNo="35" Text="Battery Low" />
+		<Alarm AlarmNo="36" Text="High Min. Volume" />
+		<Alarm AlarmNo="37" Text="Temp. Sensor WB" />
+		<Alarm AlarmNo="38" Text="Temp. Sensor DIST" />
+		<Alarm AlarmNo="39" Text="Temp. Sensor PROX" />
+		<Alarm AlarmNo="40" Text="Air PRESS. Sensor" />
+		<Alarm AlarmNo="41" Text="O2 PRESS. Sensor" />
+		<Alarm AlarmNo="42" Text="High Fio2" />
+		<Alarm AlarmNo="43" Text="Low Fio2" />
+		<Alarm AlarmNo="44" Text="High Temperature" />
+		<Alarm AlarmNo="45" Text="Low Temperature" />
+		<Alarm AlarmNo="46" Text="High TEMP. WB" />
+		<Alarm AlarmNo="47" Text="Low TEMP. WB" />
+		<Alarm AlarmNo="48" Text="Valve / NEB.,INJ" />
+		<Alarm AlarmNo="49" Text="POT./VT,HFO,TEMP." />
+		<Alarm AlarmNo="50" Text="Button" />
+		<Alarm AlarmNo="51" Text="TEMP. PNEUMATIC" />
+		<Alarm AlarmNo="52" Text="Gas Too Dry" />
+	</Alarms>
+	<AlarmPriorities>
+		<AlarmPriority ID="0" Text="no alarm" />
+		<AlarmPriority ID="10" Text="quitted alarm" />
+		<AlarmPriority ID="12" Text="HP alarm" />
+		<AlarmPriority ID="14" Text="MP/MHP alarm" />
+	</AlarmPriorities>
+</DeviceInfo>
