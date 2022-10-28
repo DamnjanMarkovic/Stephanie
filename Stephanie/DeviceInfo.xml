@@ -4,6 +4,12 @@
 		<Request2 RequestPacketType="Stephanie.RequestPacket.AlarmRequestPacket" RequestCommandText="GET2" />
 		<Request3 RequestPacketType="Stephanie.RequestPacket.SettingsRequestPacket" RequestCommandText="GET3" />
 		<Request4 RequestPacketType="Stephanie.RequestPacket.DeviceSettingsRequestPacket" RequestCommandText="GET4" />
+		<Request5 RequestPacketType="Stephanie.RequestPacket.BreathingGasSettingsRequestPacket" RequestCommandText="GET5" />
+		<Request6 RequestPacketType="Stephanie.RequestPacket.BreathingGasMeasuredValuesRequestPacket" RequestCommandText="GET6" />
+		<Request7 RequestPacketType="Stephanie.RequestPacket.BloodGasMeasuredValuesRequestPacket" RequestCommandText="GET7" />
+		<Request8 RequestPacketType="Stephanie.RequestPacket.DeviceInformationRequestPacket" RequestCommandText="GET8" />
+		<RequestC RequestPacketType="Stephanie.RequestPacket.SpO2ControllerValuesRequestPacket" RequestCommandText="GETC" />
+		<RequestD RequestPacketType="Stephanie.RequestPacket.VentilationModeAsTextRequestPacket" RequestCommandText="GETD" />
 	</RequestCommands>
 	<Paramaters>
 		<Data ID="1" Name="Pmax" Description="maximum of endinspiratory pressure in 1 cmH2O" Divider="10" />
@@ -40,6 +46,54 @@
 		<DeviceSettings ID="33" Name="Respiratory Supplement" Description="Respiratory Supplement" />
 		<DeviceSettings ID="34" Name="Closed Loop Ventilation" Description="Status (DATA_1)"/>
 		<DeviceSettings ID="35" Name="Rebreathing Mode" Description="Open / Closed"/>
+		<BreathingGasSettings ID="49" Name="Unit CO2" Description="Vol%"/>
+		<BreathingGasSettings ID="50" Name="Unit N2O" Description="Vol%"/>
+		<BreathingGasSettings ID="51" Name="Unit AGA" Description="Vol%"/>
+		<BreathingGasSettings ID="52" Name="Unit XE" Description="Vol%"/>
+		<BreathingGasSettings ID="53" Name="Unit SpO2" Description="Vol%"/>
+		<BreathingGasMeasuredValues ID="96" Name="EtO2" Description="expiratory"/>
+		<BreathingGasMeasuredValues ID="97" Name="FiAGA" Description="expiratory"/>
+		<BreathingGasMeasuredValues ID="98" Name="EtAGA" Description="expiratory"/>
+		<BreathingGasMeasuredValues ID="99" Name="FiCO2" Description="expiratory"/>
+		<BreathingGasMeasuredValues ID="100" Name="EtCO2" Description="expiratory"/>
+		<BreathingGasMeasuredValues ID="101" Name="FiN2O" Description="expiratory"/>
+		<BreathingGasMeasuredValues ID="102" Name="EtN2O" Description="expiratory"/>
+		<BreathingGasMeasuredValues ID="103" Name="Xe" Description="expiratory"/>
+		<BreathingGasMeasuredValues ID="104" Name="Xe Volume" Description="expiratory"/>
+		<BreathingGasMeasuredValues ID="105" Name="AGA Typ" Description="expiratory"/>
+		<BloodGasMeasuredValues ID="112" Name="SpO2" Description="oxygen saturation in 1/10 %"/>
+		<BloodGasMeasuredValues ID="113" Name="PR" Description="pulse rate in bpm"/>
+		<BloodGasMeasuredValues ID="114" Name="PI" Description="perfusion index in 1/100 % "/>
+		<BloodGasMeasuredValues ID="115" Name="PVI" Description="pleth variability Index in %"/>
+		<BloodGasMeasuredValues ID="116" Name="SpHb" Description="1/10 g/dl"/>
+		<BloodGasMeasuredValues ID="117" Name="SpCO" Description="1/10 %"/>
+		<BloodGasMeasuredValues ID="118" Name="SpMet" Description="1/10 %"/>
+		<BloodGasMeasuredValues ID="119" Name="SpOC" Description="1/10 ml O2/dl"/>
+		<BloodGasMeasuredValues ID="120" Name="Imp. 1" Description="Arbitary Units"/>
+		<BloodGasMeasuredValues ID="121" Name="Imp. 2" Description="Arbitary Units"/>
+		<DeviceInformation ID="128" Name="PDMS Version" Description="PDMS Version = 4"/>
+		<DeviceInformation ID="129" Name="Geräte-Hersteller" Description="Fritz Stephan GmbH"/>
+		<DeviceInformation ID="130" Name="Gerätemodell" Description="Stephanie 5"/>
+		<DeviceInformation ID="131" Name="Geräte-UDI" Description="EVE"/>
+		<DeviceInformation ID="132" Name="Seriennummer des Geräts" Description="Identifizierung der Gerätenummer"/>
+		<DeviceInformation ID="133" Name="Software-Version des Geräts" Description="Identifizierung der im Gerät implementierten Mainboard bzw. GUI Software"/>
+		<DeviceInformation ID="134" Name="Spracheinstellung" Description="de"/>
+		<DeviceInformation ID="135" Name="Pressure Unit" Description="mbar"/>
+		<DeviceInformation ID="192" Name="Controller Status Setpoint" Description="Status: Off"/>
+		<DeviceInformation ID="193" Name="Controller Activity Setpoint" Description="Activity: Suspended"/>
+		<DeviceInformation ID="194" Name="SpO2 Actual Value" Description="Measured Value Oxygen Saturation in %"/>
+		<DeviceInformation ID="195" Name="SpO2 Lower Limit Setpoint" Description="Lower Limit in %"/>
+		<DeviceInformation ID="196" Name="SpO2 Upper Limit Setpoint" Description="Upper Limit in %"/>
+		<DeviceInformation ID="197" Name="BasisFiO2 Actual Value" Description="Control Value in %"/>
+		<DeviceInformation ID="198" Name="BasisFiO2 Setpoint" Description="Setting Control Value in %"/>
+		<DeviceInformation ID="199" Name="BackupFiO2 Setpoint" Description="Setting Control Value in %"/>
+		<DeviceInformation ID="200" Name="FiO2 Average Value" Description="Average Value in %"/>
+		<DeviceInformation ID="201" Name="FiO2 or O2 ** Setpoint" Description="Current Inspiratory Oxygen Concentration Setpoint in %"/>
+		<DeviceInformation ID="202" Name="FiO2 or O2 ** Actual Value" Description="Current Inspiratory Oxygen Concentration Measured Value in % "/>
+		<DeviceInformation ID="203" Name="Intervention Status" Description="Intervention Status: None"/>
+		<DeviceInformation ID="204" Name="Limitation Type" Description="Type: None"/>
+		<DeviceInformation ID="205" Name="Protocol" Description="Protocol: Intern"/>
+		<VentilationModeAsText ID="255" Name="Ventilation Mode As Text" Description="Ventilation Mode As Text"/>
 	</Paramaters>
 	<Alarms>
 		<Alarm AlarmNo="0" Text="Controller Fail" />

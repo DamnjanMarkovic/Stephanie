@@ -222,17 +222,113 @@ namespace Stephanie
             // add settings values retrieved from the device
             oParamList.AddRange(ProcessSettings());
 
-            // add device settings values retrieved from the device
+
+            // add Device settings values retrieved from the device
             oParamList.AddRange(ProcessDeviceSettings());
+
+            // add Breathing Gas settings values retrieved from the device
+            oParamList.AddRange(ProcessBreathingGasSettings());
+
+            // add Breathing Gas Measured Values values retrieved from the device
+            oParamList.AddRange(ProcessBreathingGasMeasuredValues());
+
+            // add Blood Gas Measured Values values retrieved from the device
+            oParamList.AddRange(ProcessBloodGasMeasuredValues());
+
+            // add Device Information values retrieved from the device
+            oParamList.AddRange(ProcessDeviceInformation());
+
+            // add SpO2 Controller Values retrieved from the device
+            oParamList.AddRange(ProcessSpO2ControllerValues());
+
+            // add SpO2 Controller Values retrieved from the device
+            oParamList.AddRange(VentilationModeAsTextValues());
 
             // write all data to the lazy writer
             WriteToLazyWriter(oParamList);
         }
 
-        // ProcessData
         //  Description:    Communicates with the device to get data values and then parses it.
-        //
         //  Output:         List of parameters which represents the parsed data extracted from the data received from the device.
+
+
+        //  Ventilation Mode As Text Values
+        private IEnumerable<Parameter> VentilationModeAsTextValues()
+        {
+            // Create a request packet and send it to the device
+            var byData = GetRawDataFromDevice(new VentilationModeAsTextRequestPacket());
+
+            // Create a response packet from the data arrived from the device
+            var oVentilationModeAsTextResponsePacket = new VentilationModeAsTextResponsePacket(byData);
+
+            // Returning the data as a list of parameters (parsed)
+            return oVentilationModeAsTextResponsePacket.GetParsedData();
+        }
+
+        //  SpO2 Controller Values
+        private IEnumerable<Parameter> ProcessSpO2ControllerValues()
+        {
+            // Create a request packet and send it to the device
+            var byData = GetRawDataFromDevice(new SpO2ControllerValuesRequestPacket());
+
+            // Create a response packet from the data arrived from the device
+            var oSpO2ControllerValuesResponsePacket = new SpO2ControllerValuesResponsePacket(byData);
+
+            // Returning the data as a list of parameters (parsed)
+            return oSpO2ControllerValuesResponsePacket.GetParsedData();
+        }
+
+
+        // Device Information
+        private IEnumerable<Parameter> ProcessDeviceInformation()
+        {
+            // Create a request packet and send it to the device
+            var byData = GetRawDataFromDevice(new DeviceInformationRequestPacket());
+
+            // Create a response packet from the data arrived from the device
+            var oDeviceInformationResponsePacket = new DeviceInformationResponsePacket(byData);
+
+            // Returning the data as a list of parameters (parsed)
+            return oDeviceInformationResponsePacket.GetParsedData();
+        }
+
+        // BloodGas Measured Values
+        private IEnumerable<Parameter> ProcessBloodGasMeasuredValues()
+        {
+            // Create a request packet and send it to the device
+            var byData = GetRawDataFromDevice(new BloodGasMeasuredValuesRequestPacket());
+
+            // Create a response packet from the data arrived from the device
+            var oBloodGasMeasuredValuesResponsePacket = new BloodGasMeasuredValuesResponsePacket(byData);
+
+            // Returning the data as a list of parameters (parsed)
+            return oBloodGasMeasuredValuesResponsePacket.GetParsedData();
+        }
+        // Breathing Gas Measured Values
+        private IEnumerable<Parameter> ProcessBreathingGasMeasuredValues()
+        {
+            // Create a request packet and send it to the device
+            var byData = GetRawDataFromDevice(new BreathingGasMeasuredValuesRequestPacket());
+
+            // Create a response packet from the data arrived from the device
+            var oBreathingGasMeasuredValuesResponsePacket = new BreathingGasMeasuredValuesResponsePacket(byData);
+
+            // Returning the data as a list of parameters (parsed)
+            return oBreathingGasMeasuredValuesResponsePacket.GetParsedData();
+        }
+        // Breathing Gas Settings
+        private IEnumerable<Parameter> ProcessBreathingGasSettings()
+        {
+            // Create a request packet and send it to the device
+            var byData = GetRawDataFromDevice(new BreathingGasSettingsRequestPacket());
+
+            // Create a response packet from the data arrived from the device
+            var oBreathingGasSettingsResponsePacket = new BreathingGasSettingsResponsePacket(byData);
+
+            // Returning the data as a list of parameters (parsed)
+            return oBreathingGasSettingsResponsePacket.GetParsedData();
+        }
+        // ProcessData
         protected List<Parameter> ProcessData()
         {
             // Create a request packet and send it to the device
@@ -244,11 +340,7 @@ namespace Stephanie
             // Returning the data as a list of parameters (parsed)
             return oDataResponsePacket.GetParsedData();
         }
-
         // ProcessAlarms
-        //  Description:    Communicates with the device to get alarms data and then parses it.
-        //
-        //  Output:         List of parameters which represents the parsed data extracted from the data received from the device.
         protected List<Parameter> ProcessAlarms()
         {
             // Create a request packet and send it to the device
@@ -260,11 +352,7 @@ namespace Stephanie
             // Returning the data as a list of parameters (parsed)
             return oAlarmResponsePacket.GetParsedData();
         }
-
         // ProcessSettings
-        //  Description:    Communicates with the device to get settings data and then parses it.
-        //
-        //  Output:         List of parameters which represents the parsed data extracted from the data received from the device.
         protected List<Parameter> ProcessSettings()
         {
             // Create a request packet and send it to the device
@@ -278,9 +366,6 @@ namespace Stephanie
         }
 
         // ProcessDeviceSettings
-        //  Description:    Communicates with the device to get device settings data and then parses it.
-        //
-        //  Output:         List of parameters which represents the parsed data extracted from the data received from the device settings.
         protected List<Parameter> ProcessDeviceSettings()
         {
             // Create a request packet and send it to the device
@@ -292,7 +377,6 @@ namespace Stephanie
             // Returning the data as a list of parameters (parsed)
             return oSettingResponsePacket.GetParsedData();
         }
-
 
 
         // WriteToLazyWriter
@@ -322,6 +406,12 @@ namespace Stephanie
                     {
                         // If a description is available write it as well
                         LazyWriter.WriteDescription(oParam.Name, oParam.Description);
+
+                        //added for testing on the machine
+                        //this doesn't work in my test environment (dll MVBSLib is not working properly)
+#if DEBUG
+                        HelperObject.WriteToLog($"Param Name: {oParam.Name}, Param Desc: {oParam.Description}");
+#endif
                     }
                 }
                 else

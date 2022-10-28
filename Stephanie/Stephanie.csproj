@@ -96,21 +96,39 @@
     </Compile>
     <Compile Include="RequestPacket\AlarmRequestPacket.cs" />
     <Compile Include="RequestPacket\DataRequestPacket.cs" />
+    <Compile Include="RequestPacket\DeviceInformationRequestPacket.cs" />
     <Compile Include="RequestPacket\DeviceSettingsRequestPacket.cs" />
     <Compile Include="RequestPacket\RequestCommands.cs" />
     <Compile Include="RequestPacket\RequestPacket.cs" />
     <Compile Include="RequestPacket\SettingsRequestPacket.cs" />
+    <Compile Include="RequestPacket\SpO2ControllerValuesRequestPacket.cs" />
+    <Compile Include="RequestPacket\VentilationModeAsTextRequestPacket.cs" />
     <Compile Include="ResponsePacket\AlarmResponsePacket.cs" />
+    <Compile Include="ResponsePacket\BloodGasMeasuredValuesResponsePacket.cs" />
+    <Compile Include="ResponsePacket\BreathingGasMeasuredValuesResponsePacket.cs" />
+    <Compile Include="ResponsePacket\BreathingGasSettingsResponsePacket.cs" />
     <Compile Include="ResponsePacket\DataResponsePacket.cs" />
+    <Compile Include="ResponsePacket\DeviceInformationResponsePacket.cs" />
     <Compile Include="ResponsePacket\DeviceSettingResponsePacket.cs" />
     <Compile Include="ResponsePacket\Parameters\AlarmParameter.cs" />
+    <Compile Include="ResponsePacket\Parameters\BloodGasMeasuredValuesParametar.cs" />
+    <Compile Include="RequestPacket\BloodGasMeasuredValuesRequestPacket.cs" />
+    <Compile Include="RequestPacket\BreathingGasMeasuredValuesRequestPacket.cs" />
+    <Compile Include="RequestPacket\BreathingGasSettingsRequestPacket.cs" />
+    <Compile Include="ResponsePacket\Parameters\BreathingGasMeasuredValuesParametar.cs" />
+    <Compile Include="ResponsePacket\Parameters\BreathingGasSettingsParametar.cs" />
     <Compile Include="ResponsePacket\Parameters\DataParameter.cs" />
+    <Compile Include="ResponsePacket\Parameters\DeviceInformationParametar.cs" />
     <Compile Include="ResponsePacket\Parameters\DeviceSettingsParameter.cs" />
     <Compile Include="ResponsePacket\Parameters\Parameter.cs" />
+    <Compile Include="ResponsePacket\Parameters\SpO2ControllerValuesParametar.cs" />
+    <Compile Include="ResponsePacket\Parameters\VentilationModeAsTextParametar.cs" />
     <Compile Include="ResponsePacket\ResponsePacket.cs" />
     <Compile Include="ResponsePacket\Parameters\ParameterInfo.cs" />
     <Compile Include="ResponsePacket\Parameters\SettingsParameter.cs" />
     <Compile Include="ResponsePacket\SettingResponsePacket.cs" />
+    <Compile Include="ResponsePacket\SpO2ControllerValuesResponsePacket.cs" />
+    <Compile Include="ResponsePacket\VentilationModeAsTextResponsePacket.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
