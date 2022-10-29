@@ -23,6 +23,10 @@ namespace Stephanie
 
         protected override bool AssignAndValidateStringValue(string value)
         {
+            //added for testing on the machine
+#if DEBUG
+            Console.WriteLine($"VentilationModeAsTextParametar; Value: {value}");
+#endif
             //  Set Description, using Name and PDF values:
             this.m_Description = value;
 
@@ -33,6 +37,10 @@ namespace Stephanie
 
         protected override bool AssignAndValidateValue(short value)
         {
+            //added for testing on the machine
+#if DEBUG
+            Console.WriteLine($"VentilationModeAsTextParametar; short Value: {value}");
+#endif
             // Calculating the real value for this parameter
             m_Value = ((float)value / m_Divider).ToString();
             return true;

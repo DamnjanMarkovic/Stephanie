@@ -1,6 +1,8 @@
 ﻿
+using Stephanie.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace Stephanie
@@ -27,6 +29,11 @@ namespace Stephanie
 
         public override List<Parameter> GetParsedData()
         {
+            //added for testing on the machine
+#if DEBUG
+            Debug.WriteLine($"DeviceInformationResponsePacket; Data as byte array: {TestHelper.PrintByteArray(Data)}");
+            Debug.WriteLine($"DeviceInformationResponsePacket; Data as string: {Encoding.UTF8.GetString(Data)}");
+#endif
             List<Parameter> oParamList = new List<Parameter>();
 
             for (int i = 0; i < Data.Length; i += 2)

@@ -19,6 +19,10 @@ namespace Stephanie
 
         protected override bool AssignAndValidateValue(short value)
         {
+            //added for testing on the machine
+#if DEBUG
+            Console.WriteLine($"SpO2ControllerValuesParametar; Value: {value}");
+#endif
             //  Set Description, using Name and PDF values:
 
             switch (this.Name)

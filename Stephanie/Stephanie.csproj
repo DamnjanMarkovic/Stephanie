@@ -83,6 +83,7 @@
     <Compile Include="Exceptions\ParameterExceptions.cs" />
     <Compile Include="Exceptions\RequestCommandsExceptions.cs" />
     <Compile Include="Exceptions\ResponsePacketExceptions.cs" />
+    <Compile Include="Helpers\TestHelper.cs" />
     <Compile Include="Helpers\XmlHelper.cs" />
     <Compile Include="Installer.cs">
       <SubType>Component</SubType>

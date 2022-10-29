@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVBSLib;
+using System;
 
 namespace Stephanie
 {
@@ -23,6 +24,12 @@ namespace Stephanie
 
         protected override bool AssignAndValidateStringValue(string value)
         {
+            //added for testing on the machine
+#if DEBUG
+            Console.WriteLine($"DeviceInformationParametar; Value: {value}");
+#endif
+
+
             //  Set Description, using Name and PDF values:
             this.m_Description = value;
 
@@ -33,6 +40,10 @@ namespace Stephanie
 
         protected override bool AssignAndValidateValue(short value)
         {
+            //added for testing on the machine
+#if DEBUG
+            Console.WriteLine($"DeviceInformationParametar; short value: {value}");
+#endif
             //Set Description
 
             if (m_Name.Equals("Pressure Unit"))

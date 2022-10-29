@@ -19,6 +19,10 @@ namespace Stephanie
 
         protected override bool AssignAndValidateValue(short value)
         {
+            //added for testing on the machine
+#if DEBUG
+            Console.WriteLine($"BreathingGasSettingsParametar; Value: {value}");
+#endif
             //  Set Description, using Name and PDF values:
             //  I don't know if this should be set here or is something else reading the values and 'converting' them to strings
 
