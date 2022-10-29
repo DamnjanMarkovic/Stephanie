@@ -32,7 +32,6 @@ namespace Stephanie
             //added for testing on the machine
 #if DEBUG
             Debug.WriteLine($"DeviceInformationResponsePacket; Data as byte array: {TestHelper.PrintByteArray(Data)}");
-            Debug.WriteLine($"DeviceInformationResponsePacket; Data as string: {Encoding.UTF8.GetString(Data)}");
 #endif
             List<Parameter> oParamList = new List<Parameter>();
 
